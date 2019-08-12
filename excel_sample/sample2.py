@@ -10,7 +10,7 @@ from openpyxl.chart import BarChart, Reference
 import pandas as pd
 
 
-excel_bookname = 'ブック名.xlsx'
+excel_bookname = 'file/ブック名.xlsx'
 data_sheet_name = '集計データ'
 result_sheet_name = '集計結果'
 target_column = '集計カラム'

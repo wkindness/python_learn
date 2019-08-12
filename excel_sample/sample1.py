@@ -12,7 +12,7 @@ from openpyxl.chart import BarChart, Reference
 import pandas as pd
 
 ''' ファイル読み込み '''
-excel_bookname = 'Book1.xlsx'
+excel_bookname = 'file/Book1.xlsx'
 df_master = pd.read_excel(excel_bookname, sheet_name='マスターデータ')
 df_data = pd.read_excel(excel_bookname, sheet_name='集計するデータ')
 
