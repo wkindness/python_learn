@@ -26,18 +26,17 @@ del book[result_sheet_name]
 book.create_sheet(title=result_sheet_name)
 sheet = book[result_sheet_name]
 
-row_number = 0
-for key in result_data:
-    row_number += 1
-    sheet.cell(row=row_number, column=1).value = key
-    sheet.cell(row=row_number, column=2).value = result_data[key]
+for i, key in enumerate(result_data, start=1):
+    sheet.cell(row=i, column=1).value = key
+    sheet.cell(row=i, column=2).value = result_data[key]
 
 # 棒グラフ、凡例なし
 chart = BarChart()
 chart.title = '棒グラフタイトル'
 chart.legend = None
-values = Reference(sheet, min_col=2, min_row=1, max_col=2, max_row=row_number)
-titles = Reference(sheet, min_col=1, min_row=1, max_row=row_number)
+type_max = len(result_data)
+values = Reference(sheet, min_col=2, min_row=1, max_col=2, max_row=type_max)
+titles = Reference(sheet, min_col=1, min_row=1, max_row=type_max)
 chart.add_data(values)
 chart.set_categories(titles)
 sheet.add_chart(chart, "D2")
