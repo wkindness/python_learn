@@ -22,9 +22,9 @@ book = openpyxl.load_workbook(excel_bookname)
 del book[sheet_name]
 book.create_sheet(title=sheet_name)
 sheet = book[sheet_name]
+
 row_number = 1
-chartPosition = 2
-for master_column in df_master.columns:
+for i, master_column in enumerate(df_master.columns):
     sheet.cell(row=row_number, column=1).value = master_column
     row_number += 1
     chartStartRow = row_number
@@ -58,7 +58,7 @@ for master_column in df_master.columns:
     chart.add_data(values)
     chart.set_categories(titles)
 
-    sheet.add_chart(chart, "E{}".format(chartPosition))
-    chartPosition += 15
+    chartPosition = 1 + i * 20 #1,21,41,...
+    sheet.add_chart(chart, f"E{chartPosition}")
 
 book.save(excel_bookname)
