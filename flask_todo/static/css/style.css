@@ -1,0 +1,40 @@
+header {
+    margin-top: 30px;
+    color: #2e99a9;
+}
+footer {
+    text-align: center;
+}
+
+hr {
+    border-width: 3px;
+    border-color: #2e99a9;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+}
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.message {
+    color: #006400;
+}
+.errormessage {
+    color: #f00;
+}
+
+.work-list p {
+    margin: 0px 20px;
+}
+
+.addform input {
+    width: 400px;
+    margin: 0px;
+    padding: 5px;
+}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <h2>削除確認</h2>
+
+  <form action="/delexe" method="post">
+    <ul>
+    {% for word in todowords %}
+      <li>{{ word }}</li>
+    {% endfor %}
+  </ul>
+      
+    <p>
+      <input type=button class="btn btn-primary" onclick="history.back()" value="戻る">
+      <button type="submit" class="btn btn-danger">削除を実行する</button>
+    </p>
+
+    {% for word in todowords %}
+    <input type="hidden" name="delwords" value="{{ word }}">
+    {% endfor %}
+  </form>
+
+</div>
+{% endblock %}
